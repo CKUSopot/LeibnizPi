@@ -22,12 +22,11 @@ public class LeibnizPi {
         System.out.print("Podaj dokładność liczby PI (1-10000): ");
         int dokladnosc = scanner.nextInt();
         float suma = 0.0F;
-        int znak = 1;
-        for(int i = 1; i <= dokladnosc; i += 2){
-            suma += (1F/i * znak);// przemnażam przez znak, aby 1/i była na przemian dodawane i ode
-            znak *= (-1);// po każdej iteracji pętli będzie raz 1 a następnie -1
+//        int znak = 1;
+        for(int i = 1; i <= dokladnosc; i++){
+            suma += (1F/Math.pow(i, 2));
         }
-        suma *= 4;
+        suma *= 6;
         System.out.printf("Liczba PI wynosi %f", suma);
     }
 }
